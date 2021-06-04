@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Database-Interactions</title>
-    <link href="/express-mysql/exercise.js">
-    <link href="../../css/style.css">
+    <link href="/express-mysql/exercise-handlers.js">
+    <link href="exercise.js">
+    <link href="../static/css/style.css">
 </head>
 <body>
     <h1>Today's Workout</h1>
@@ -19,10 +20,10 @@
     <fieldset>
         <legend>Add a new exercise</legend>
         <form>
-        <label>Name:<input type="text" name="name" /></label><label>reps:<input type="text" name="reps" /></label>
-        <label>weight:<input type="text" name="weight" /></label><label>unit:<input type="text" name="unit" /></label>
-        <label>date:<input type="date" name="date" /></label>
-        <button>Add</button>
+        <label for="name">Name:<input type="text" name="name" id="in-name"/></label><label>reps:<input type="text" name="reps" id="in-reps" /></label>
+        <label for="weight">weight:<input type="text" name="weight" id="in-weight"/></label><label>unit:<input type="text" name="unit" id="in-unit" /></label>
+        <label for="date">date:<input type="date" name="date" id="in-date" /></label>
+        <button>Add<input type="submit" name="add" id="in-add"></button>
         </form>
     </fieldset>
     <table>
@@ -36,12 +37,15 @@
             </tr>
         </thead>
         <tbody class="exercises" id="exerciseBody">
-        {{#each infoList}}
         <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.value}}</td>
+            <td id="name"></td>
+            <td id="reps"></td>
+            <td id="weight"></td>
+            <td id="units"></td>
+            <td id="date"></td>
+            <td><button>Edit<input type="hidden" name="edit"/></button></td>
+            <td><button>Delete<input type="hidden" name="delete"/></button></td>
         </tr>
-        {{/each}}
         </tbody>
     </table>
 </body>
