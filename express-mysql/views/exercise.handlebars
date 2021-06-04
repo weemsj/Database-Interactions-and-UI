@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database-Interactions</title>
+    <link href="/express-mysql/exercise.js">
+    <link href="../../css/style.css">
+</head>
+<body>
+    <h1>Today's Workout</h1>
+        <h3>Instructions:</h3>
+        <ol>
+            <li>To add a workout to your workout list, insert the name of the exercise, the number of reps, the weight,
+                date, and conversion units. Then click add.</li>
+            <li>To edit a workout click the edit button to the right of the exercise.</li>
+            <li>Once a workout is completed, click delete and the workout will be removed.</li>
+        </ol>
+
+    <fieldset>
+        <legend>Add a new exercise</legend>
+        <form>
+        <label>Name:<input type="text" name="name" /></label><label>reps:<input type="text" name="reps" /></label>
+        <label>weight:<input type="text" name="weight" /></label><label>unit:<input type="text" name="unit" /></label>
+        <label>date:<input type="date" name="date" /></label>
+        <button>Add</button>
+        </form>
+    </fieldset>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Reps</th>
+                <th>Weight</th>
+                <th>Units</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody class="exercises" id="exerciseBody">
+        {{#each infoList}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.value}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
