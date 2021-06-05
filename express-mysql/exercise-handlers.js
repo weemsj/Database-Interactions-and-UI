@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('./dbcon.js');
+const mysql = require('/dbcon.js');
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,9 +10,7 @@ app.use(bodyParser.json());
 app.set('port', 9248);
 app.use(express.static('public'));
 
-app.get('/', function (req, res){
 
-})
 
 app.get('/', function(req, res, next){
     let context = {};
@@ -26,7 +24,7 @@ app.get('/', function(req, res, next){
     });
 });
 
-app.get('/',function(req,res,next){
+app.post('/api/exercise',function(req,res,next){
     let context = {};
     mysql.pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `unit`, ) VALUES (?, ?, ?, ?, ?)",
         [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.unit], function(err, result){

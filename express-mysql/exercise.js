@@ -15,7 +15,7 @@ document.getElementById('addWorkoutForm').addEventListener('submit', function (e
         'content-type': 'application/json'
     }
     const container = document.getElementById('addWeightContainer')
-    fetch('/', {method: 'POST', body, headers})
+    fetch('/api/exercise', {method: 'POST', body, headers})
         .then(function (response){
             if(response.status < 200 || response.status >= 300)
                 throw new Error(`Request failed with status ${response.status}`)
