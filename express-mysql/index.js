@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-/*
+
 app.get('/', function(req, res, next){
     let context = {};
     mysql.pool.query('SELECT * FROM workouts', function(err, rows){
@@ -20,10 +20,11 @@ app.get('/', function(req, res, next){
             return;
         }
         context.results = JSON.stringify(rows);
-        res.send(context);
+        res.redirect('/see.html')
+        ;
     });
 });
-*/
+
 app.post('/api/exercise', function(req, res){
     res.json(req.body);
 })
@@ -41,7 +42,7 @@ app.post('/',function(req,res,next){
         res.send(context);
     });
 });
-
+*/
 app.get('/reset-table',function(req,res,next){
     let context = {};
     mysql.pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
@@ -58,7 +59,7 @@ app.get('/reset-table',function(req,res,next){
         })
     });
 });
-*/
+
 /*
 app.use(function(req,res){
     res.status(404);
