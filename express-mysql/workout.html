@@ -16,16 +16,17 @@
             <li>To edit a workout click the edit button to the right of the exercise.</li>
             <li>Once a workout is completed, click delete and the workout will be removed.</li>
         </ol>
-
+    <div id="addWeightContainer">
     <fieldset>
         <legend>Add a new exercise</legend>
-        <form>
+        <form id="addWorkoutForm">
         <label for="name">Name:<input type="text" name="name" id="in-name"/></label><label>reps:<input type="text" name="reps" id="in-reps" /></label>
         <label for="weight">weight:<input type="text" name="weight" id="in-weight"/></label><label>unit:<input type="text" name="unit" id="in-unit" /></label>
         <label for="date">date:<input type="date" name="date" id="in-date" /></label>
-        <button>Add<input type="submit" name="add" id="in-add"></button>
+        <input type="submit" name="add" id="in-add">
         </form>
     </fieldset>
+    </div>
     <table>
         <thead>
             <tr>
