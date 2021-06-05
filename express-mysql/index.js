@@ -1,16 +1,16 @@
 const express = require('express');
 const mysql = require('./dbcon.js');
 const morgan = require('morgan');
-const app = express();
 const bodyParser = require('body-parser');
 
+const app = express();
 app.set('port', 9248);
+
+app.use(morgan('dev'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(morgan('dev'));
-
-app.use(express.static('public'));
 /*
 app.get('/', function(req, res, next){
     let context = {};
@@ -24,8 +24,7 @@ app.get('/', function(req, res, next){
     });
 });
 */
-app.post('/api/exercise', function(req, res){
-
+app.post('/exercise', function(req, res){
     res.json(req.body);
 })
 
