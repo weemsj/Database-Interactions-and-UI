@@ -1,12 +1,13 @@
 const express = require('express');
 const mysql = require('./dbcon.js');
-
+const morgan = require('morgan');
 const app = express();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(morgan('dev'))
 app.set('port', 9248);
 app.use(express.static('public'));
 
