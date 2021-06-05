@@ -2,7 +2,7 @@ let express = require('express');
 
 let app = express();
 
-app.set('port', 9248);
+app.set('port', 7656);
 
 app.get('/',function(req,res){
     res.type('text/plain');
