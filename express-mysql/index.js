@@ -24,7 +24,7 @@ app.get('/', function(req, res, next){
     });
 });
 */
-app.post('/exercise', function(req, res){
+app.post('/api/exercise', function(req, res){
     res.json(req.body);
 })
 
