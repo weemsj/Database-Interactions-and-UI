@@ -28,7 +28,7 @@ app.post('/api/exercise', function(req, res){
     res.json(req.body);
 })
 
-
+/*
 app.post('/',function(req,res,next){
     let context = {};
     mysql.pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `unit`, ) VALUES (?, ?, ?, ?, ?)",
@@ -58,8 +58,8 @@ app.get('/reset-table',function(req,res,next){
         })
     });
 });
-
-
+*/
+/*
 app.use(function(req,res){
     res.status(404);
     res.send('404');
@@ -71,7 +71,7 @@ app.use(function(err, req, res, next){
     res.status(500);
     res.send('500');
 });
-
+*/
 app.listen(app.get('port'), function(){
     console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
