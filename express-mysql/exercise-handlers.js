@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('/dbcon.js');
+const mysql = require('./dbcon.js');
 
 const app = express();
 const bodyParser = require('body-parser');
