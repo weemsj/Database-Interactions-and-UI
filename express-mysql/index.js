@@ -4,13 +4,14 @@ const morgan = require('morgan');
 const app = express();
 const bodyParser = require('body-parser');
 
+app.set('port', 9248);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(morgan('dev'));
-app.set('port', 9248);
-app.use(express.static('public'));
 
+app.use(express.static('public'));
+/*
 app.get('/', function(req, res, next){
     let context = {};
     mysql.pool.query('SELECT * FROM workouts', function(err, rows){
@@ -22,7 +23,7 @@ app.get('/', function(req, res, next){
         res.send(context);
     });
 });
-
+*/
 app.post('/api/exercise', function(req, res){
 
     res.json(req.body);
