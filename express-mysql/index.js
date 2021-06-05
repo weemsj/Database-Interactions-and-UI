@@ -23,7 +23,13 @@ app.get('/', function(req, res, next){
     });
 });
 
-app.post('/api/exercise',function(req,res,next){
+app.post('/api/exercise', function(req, res){
+
+    res.json(req.body);
+})
+
+
+app.post('/',function(req,res,next){
     let context = {};
     mysql.pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `unit`, ) VALUES (?, ?, ?, ?, ?)",
         [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.unit], function(err, result){

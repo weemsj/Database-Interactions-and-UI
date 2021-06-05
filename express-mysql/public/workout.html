@@ -19,10 +19,10 @@
     <div id="addWeightContainer">
     <fieldset>
         <legend>Add a new exercise</legend>
-        <form id="addWorkoutForm">
-        <label for="name">Name:<input type="text" name="name" id="in-name"/></label><label>reps:<input type="text" name="reps" id="in-reps" /></label>
-        <label for="weight">weight:<input type="text" name="weight" id="in-weight"/></label><label>unit:<input type="text" name="unit" id="in-unit" /></label>
-        <label for="date">date:<input type="date" name="date" id="in-date" /></label>
+        <form id="addWorkoutForm" method="post">
+        <label for="name">Name:<input type="text" name="name" id="in-name" required/></label><label>reps:<input type="text" name="reps" id="in-reps" required/></label>
+        <label for="weight">weight:<input type="text" name="weight" id="in-weight" min="0" max="400"/></label><label>unit:<input type="text" name="unit" id="in-unit" /></label>
+        <label for="date">date:<input type="date" name="date" id="in-date" required/></label>
         <input type="submit" name="add" id="in-add">
         </form>
     </fieldset>
