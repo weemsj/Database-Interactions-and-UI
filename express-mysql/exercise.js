@@ -21,7 +21,7 @@ document.getElementById('addWorkoutForm').addEventListener('submit', function (e
                 throw new Error(`Request failed with status ${response.status}`)
             return response.json()
         })
-        .then(function (json){
+        .then(function(json){
             container.innerHTML = '<b> Thank you for signing up </b>'
         })
         .catch(function (err) {

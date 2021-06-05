@@ -11,10 +11,10 @@ app.set('port', 9248);
 app.use(express.static('public'));
 
 
-
+/*
 app.get('/', function(req, res, next){
     let context = {};
-    mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    mysql.pool.query('SELECT * FROM workouts', function(err, rows){
         if(err){
             next(err);
             return;
@@ -66,7 +66,7 @@ app.use(function(err, req, res, next){
     res.status(500);
     res.send('500');
 });
-
+*/
 app.listen(app.get('port'), function(){
     console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
