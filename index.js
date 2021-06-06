@@ -19,10 +19,11 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-app.get('/api/exercise', function (req, res) {
+app.post('/api/exercise', function (req, res){
     let data = res.json()
-    console.log(data)
-    buildTable(context)
+    res.send(data)
+    buildTable(data)
+})
 
 function buildTable(data) {
     let table = document.getElementById('exerciseBody')
@@ -37,7 +38,6 @@ function buildTable(data) {
         table.innerHTML += row
     }
 }
-})
 /*
 
 app.get('/', function(req, res, next){
