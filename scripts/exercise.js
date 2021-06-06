@@ -1,4 +1,4 @@
-
+let context =[]
 document.getElementById('addWorkoutForm').addEventListener('submit', function (event){
     event.preventDefault()
 
@@ -15,16 +15,29 @@ document.getElementById('addWorkoutForm').addEventListener('submit', function (e
         'content-type': 'application/json'
     }
     const container = document.getElementById('addWeightContainer')
-    fetch('/api/exercise', {method: 'POST', body, headers})
+    fetch('/api/exercise', {method: 'GET', body, headers})
         .then(function (response){
             if(response.status < 200 || response.status >= 300)
                 throw new Error(`Request failed with status ${response.status}`)
-            return response.json()
-        })
-        .then(function(json){
-            container.innerHTML = '<b> Thank you for signing up </b>'
-        })
-        .catch(function (err) {
-            container.innerHTML = `<b> We're sorry, we had a problem </b>`
+            context = response.json()
+            console.log(context)
         })
 })
+
+
+
+buildTable(context)
+
+function buildTable(data){
+    let table = document.getElementById('exerciseBody')
+    for(let i = 0; i < data.length; i++){
+        let row = `<tr>
+                        <td>${data[i].name}</td>
+                        <td>${data[i].reps}</td>
+                        <td>${data[i].weight}</td>
+                        <td>${data[i].unit}</td>
+                        <td>${data[i].date}</td>
+                   </tr>`
+        table.innerHTML += row
+    }
+}
