@@ -19,9 +19,17 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-app.post('/api/exercise', function (req, res){
-    let data = res.json()
-    console.log(data)
+const weightForm = document.getElementById('addWorkoutForm')
+weightForm.addEventListener('submit', function (event){
+    event.preventDefault()
+
+    const data = new FormData(this);
+app.post('/', function (req, res){
+        req.body(data)
+        let formData = res.json()
+        console.log(formData)
+        buildTable(formData)
+    })
 })
 
 function buildTable(data) {
