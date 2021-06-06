@@ -1,6 +1,5 @@
 const express = require('express');
 const mysql = require('./dbcon.js');
-const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -10,7 +9,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 9248);
 
-app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
