@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
-
+/*
 app.get('/', function(req, res, next){
     let context = {};
     mysql.pool.query('SELECT * FROM workouts', function(err, rows){
@@ -53,7 +53,7 @@ app.post('/',function(req,res,next){
         res.send(context);
     });
 });
-*/
+
 app.get('/reset-table',function(req,res,next){
     let context = {};
     mysql.pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
@@ -70,8 +70,8 @@ app.get('/reset-table',function(req,res,next){
         })
     });
 });
+*/
 
-/*
 app.use(function(req,res){
     res.status(404);
     res.send('404');
@@ -83,7 +83,7 @@ app.use(function(err, req, res, next){
     res.status(500);
     res.send('500');
 });
-*/
+
 app.listen(app.get('port'), function(){
     console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
