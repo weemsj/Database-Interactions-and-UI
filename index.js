@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.set('port', 9248);
 
 app.get('/', function(req, res){
-    res.render('workout')
+    res.render('workout', {layout:null})
 })
 /*
 app.get('/', function(req, res, next){
