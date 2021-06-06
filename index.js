@@ -1,9 +1,9 @@
-let express = require('express');
-let mysql = require('./scripts/dbcon.js');
+const express = require('express');
+const mysql = require('./scripts/dbcon.js');
 
-let app = express();
-let handlebars = require('express-handlebars').create({defaultLayout:'main'})
-
+const app = express();
+const handlebars = require('express-handlebars').create({defaultLayout:'main'})
+const fetch = require("node-fetch");
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
