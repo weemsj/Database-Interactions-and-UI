@@ -19,7 +19,7 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-const formElem = document.querySelector('form')
+const formElem = document.getElementById('addWorkoutForm')
 
 formElem.addEventListener('submit', function(event){
     event.preventDefault()
