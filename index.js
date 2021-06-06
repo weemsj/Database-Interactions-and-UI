@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('./dbcon.js');
+const mysql = require('./scripts/dbcon.js');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
-    res.render('workout.html', {layout:null})
+    res.render('workout', {layout:null})
 })
 /*
 app.get('/', function(req, res, next){
