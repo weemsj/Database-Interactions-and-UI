@@ -19,9 +19,9 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-app.post('/api/exercise', function(req, res){
-    res.body
-    let data = res.json(req.body);
+app.post('/', function(req, res){
+    let body = res.body
+    let data = body.json(req.body);
     console.log(data)
 })
 
