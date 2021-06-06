@@ -19,16 +19,24 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-app.get('/', function (req, res){
-    const formElem = document.getElementById('addWorkoutForm')
+app.get('/api/exercise', function (req, res) {
+    let data = res.json()
+    console.log(data)
+    buildTable(context)
 
-    formElem.addEventListener('submit', function(event){
-        event.preventDefault()
-    })
-    let data = new FormData(formElem);
-    for(let value of data.values()) {
-        console.log(value)
+function buildTable(data) {
+    let table = document.getElementById('exerciseBody')
+    for (let i = 0; i < data.length; i++) {
+        let row = `<tr>
+                        <td>${data[i].name}</td>
+                        <td>${data[i].reps}</td>
+                        <td>${data[i].weight}</td>
+                        <td>${data[i].unit}</td>
+                        <td>${data[i].date}</td>
+                   </tr>`
+        table.innerHTML += row
     }
+}
 })
 /*
 
