@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
-    res.render('workout', {layout:null})
+    res.render('workout.html', {layout:null})
 })
 /*
 app.get('/', function(req, res, next){
