@@ -1,4 +1,4 @@
-/*
+
 document.getElementById('addWorkoutForm').addEventListener('submit', function (event){
     event.preventDefault()
 
@@ -28,4 +28,3 @@ document.getElementById('addWorkoutForm').addEventListener('submit', function (e
             container.innerHTML = `<b> We're sorry, we had a problem </b>`
         })
 })
-*/

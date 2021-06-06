@@ -16,7 +16,7 @@ app.set('port', 9248);
 app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
-/*
+
 app.get('/', function(req, res, next){
     let context = {};
     mysql.pool.query('SELECT * FROM workouts', function(err, rows){
@@ -67,7 +67,7 @@ app.get('/reset-table',function(req,res,next){
         })
     });
 });
-
+*/
 
 app.use(function(req,res){
     res.status(404);
@@ -80,7 +80,7 @@ app.use(function(err, req, res, next){
     res.status(500);
     res.send('500');
 });
-*/
+
 app.listen(app.get('port'), function(){
     console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
