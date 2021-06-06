@@ -1,11 +1,30 @@
 let context =[]
+const formElem = document.getElementById('addWorkoutForm')
 
+formElem.addEventListener('submit', function(event){
+    event.preventDefault()
+})
 
+let data = new FormData(formElem);
+for(let value of data.values()){
+    console.log(value)
+}
 
-
-
-
-
+/*
+    const headers = {
+        'content-type': 'application/json'
+    }
+    const container = document.getElementById('addWeightContainer')
+    fetch('/api/exercise', {method: 'GET', body, headers})
+        .then(function (response){
+            if(response.status < 200 || response.status >= 300)
+                throw new Error(`Request failed with status ${response.status}`)
+            context = response.json()
+            console.log(context)
+        })
+})
+*/
+/*
 
 buildTable(context)
 
@@ -21,4 +40,4 @@ function buildTable(data){
                    </tr>`
         table.innerHTML += row
     }
-}
+}*/

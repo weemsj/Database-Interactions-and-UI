@@ -19,16 +19,7 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-const formElem = document.getElementById('addWorkoutForm')
 
-formElem.addEventListener('submit', function(event){
-    event.preventDefault()
-})
-
-    let data = new FormData(formElem);
-    for(let value of data.values()){
-        console.log(value)
-    }
 /*
 
 app.get('/', function(req, res, next){
