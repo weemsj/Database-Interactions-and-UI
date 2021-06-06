@@ -4,6 +4,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
+const handlebars = require('express-handlebars').create({default:'main'})
+
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
 app.set('port', 9248);
 
 app.use(morgan('dev'));
@@ -11,6 +15,10 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+app.get('/', function(req, res){
+    res.render('workout', {layout:null})
+})
 
 app.get('/', function(req, res, next){
     let context = {};
@@ -20,12 +28,15 @@ app.get('/', function(req, res, next){
             return;
         }
         context.results = JSON.stringify(rows);
-        res.redirect('/see.html')
+        res.type('application/json')
+        res.send(context)
         ;
     });
 });
 
 app.post('/api/exercise', function(req, res){
+    let context = {};
+    res.body
     res.json(req.body);
 })
 
