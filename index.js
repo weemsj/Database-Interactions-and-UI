@@ -4,6 +4,7 @@ let mysql = require('./scripts/dbcon.js');
 let app = express();
 let handlebars = require('express-handlebars').create({defaultLayout:'main'})
 
+
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 let bodyParser = require('body-parser');
@@ -12,10 +13,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.set('port', 9248);
+app.use(express.static('public'))
 
 app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
+
+app.post('/api/exercise', function(req, res){
+    res.body
+    let data = res.json(req.body);
+    console.log(data)
+})
+
+
+/*
 
 app.get('/', function(req, res, next){
     let context = {};
@@ -31,11 +42,7 @@ app.get('/', function(req, res, next){
     });
 });
 
-app.post('/api/exercise', function(req, res){
-    let context = {};
-    res.body
-    res.json(req.body);
-})
+*/
 
 /*
 app.post('/',function(req,res,next){
