@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
-const handlebars = require('express-handlebars').create({default:'main'})
+const handlebars = require('express-handlebars').create({defaultLayout:'main'})
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
