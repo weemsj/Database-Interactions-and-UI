@@ -19,12 +19,14 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-const weightForm = document.getElementById('addWorkoutForm')
-weightForm.addEventListener('submit', function (event){
-    event.preventDefault()
 
-    const data = new FormData(this);
+
+
 app.post('/', function (req, res){
+    const weightForm = document.getElementById('addWorkoutForm')
+    weightForm.addEventListener('submit', function (event){
+        event.preventDefault()
+        const data = new FormData(this);
         req.body(data)
         let formData = res.json()
         console.log(formData)
