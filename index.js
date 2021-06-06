@@ -1,18 +1,20 @@
 let express = require('express');
 let mysql = require('./scripts/dbcon.js');
-let bodyParser = require('body-parser');
 
 let app = express();
 let handlebars = require('express-handlebars').create({defaultLayout:'main'})
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 9248);
+let bodyParser = require('body-parser');
+
 
 app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.set('port', 9248);
 
 app.get('/', function(req, res){
     res.render('workout', {layout:null})
