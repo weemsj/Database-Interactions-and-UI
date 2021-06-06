@@ -19,13 +19,16 @@ app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
 
-app.post('/', function(req, res){
-    let body = res.body
-    let data = body.json(req.body);
-    console.log(data)
+const formElem = document.querySelector('form')
+
+formElem.addEventListener('submit', function(event){
+    event.preventDefault()
 })
 
-
+    let data = new FormData(formElem);
+    for(let value of data.values()){
+        console.log(value)
+    }
 /*
 
 app.get('/', function(req, res, next){
