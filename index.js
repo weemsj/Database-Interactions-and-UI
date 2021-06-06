@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.set('port', 9248);
 
 app.get('/', function(req, res){
-    res.render('workout', {layout:null})
+    res.redirect('/workout.html')
 })
 /*
 app.get('/', function(req, res, next){
