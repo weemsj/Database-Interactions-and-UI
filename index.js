@@ -20,7 +20,8 @@ app.get('/', function(req, res){
 })
 
 app.post('/api/exercise', function (req, res){
-    console.log(res.json())
+    let data = res.json()
+    console.log(data)
 })
 
 function buildTable(data) {
