@@ -22,8 +22,7 @@ app.get('/', function(req, res){
 app.post('/api/exercise', function (req, res){
     let body = res.body
     let data = body.json.stringify()
-    res.send(data)
-    buildTable(data)
+    console.log(data)
 })
 
 function buildTable(data) {
