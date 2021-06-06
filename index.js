@@ -8,9 +8,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 let bodyParser = require('body-parser');
 
-
-app.use(express.static('public'));
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
