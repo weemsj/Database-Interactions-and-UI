@@ -1,4 +1,4 @@
-let context =[]
+l/*et context =[]
 const formElem = document.getElementById('addWorkoutForm')
 
 formElem.addEventListener('submit', function(event){
@@ -10,7 +10,7 @@ for(let value of data.values()){
     console.log(value)
 }
 
-/*
+
     const headers = {
         'content-type': 'application/json'
     }
