@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('./scripts/dbcon.js');
+const mysql = require('./public/dbcon.js');
 
 const app = express();
 const handlebars = require('express-handlebars').create({defaultLayout:'main'})
@@ -18,8 +18,6 @@ app.use(express.static('public'))
 app.get('/', function(req, res){
     res.render('workout', {layout:null})
 })
-
-
 
 
 app.post('/', function (req, res){
