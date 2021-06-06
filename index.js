@@ -20,12 +20,11 @@ app.get('/', function(req, res){
 })
 
 
-fetch('/api/exercise').then(
-    res=>{
-        const data = res.json()
-        buildTable(data)
-    }
-)
+app.get('/api/exercise', function(req, res, next) {
+        let data = res.json();
+        buildTable(data);
+})
+
 function buildTable(data) {
     let table = document.getElementById('exerciseBody')
     for (let i = 0; i < data.length; i++) {
